@@ -177,7 +177,11 @@
   }
 </style>
 
+
+
+<!-- 
 <main class="main">
+  
   <div class="content">
     <div class="left-side">
       <svg
@@ -323,7 +327,7 @@
     </div>
   </div>
 </main>
-
+ -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
@@ -333,4 +337,50 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+      <!-- <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"> -->
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/accueil" routerLink="/accueil" >Accueil</a>
+      <a mat-list-item href="/avant-propos" routerLink="avant-propos">Avant propos</a>
+      <a mat-list-item href="/services" routerLink="/services">Services</a>
+      <a mat-list-item href="/contact" routerLink="/contact">Contact</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" style="justify-content: space-between; z-index:100;">
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <div>AMAGA CYBER</div>
+      <div fxFlex></div>
+      @if (isNotHandset$ | async) {
+        <div>
+          <mat-nav-list class="list-horizontal" color="primary">
+            <a mat-list-item href="/accueil" routerLink="/accueil" style=" color: white ! important;" routerLinkActive="active-list-item">Accueil</a>
+            <a mat-list-item href="/avant-propos"  routerLink="/avant-propos" routerLinkActive="active-list-item">À propos</a>
+            <a mat-list-item href="/services" routerLink="/services" routerLinkActive="active-list-item">Services</a>
+            <a mat-list-item href="/contact" routerLink="/contact" routerLinkActive="active-list-item">Contact</a>
+          </mat-nav-list>
+        </div>
+      }
+      
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,18 +1,22 @@
 import { Component, inject } from '@angular/core';
-import { AsyncPipe, CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from "./home/home.component";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import{ MatCardModule } from '@angular/material/card';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable, map, shareReplay } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { AvantProposComponent } from "../avant-propos/avant-propos.component";
+import { ServicesComponent } from "../services/services.component";
+import { ContactComponent } from "../contact/contact.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
   standalone: true,
   imports: [
     MatToolbarModule,
@@ -20,15 +24,14 @@ import { Observable, map, shareReplay } from 'rxjs';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-   
     AsyncPipe,
-    CommonModule, RouterOutlet, HomeComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    AvantProposComponent,
+    ServicesComponent,
+    ContactComponent,
+    FooterComponent
+]
 })
-export class AppComponent {
-  title = 'AMAGA CYBER';
-
+export class HomeComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -43,4 +46,7 @@ export class AppComponent {
       shareReplay()
     );
 
+    
+
+  
 }
