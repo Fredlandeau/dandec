@@ -8,13 +8,25 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home',
+        redirectTo: '',
       },
-      {
-        path: 'accueil',
+      /* {
+        path: '',
         component: HomeComponent,
       },
       {
+        path: '/:id',
+        component: HomeComponent,
+      }, */
+      {
+        path: 'amaga-cyber',
+        component: HomeComponent,
+      },
+      {
+        path: 'amaga-cyber/:id',
+        component: HomeComponent,
+      },
+     /*  {
         path: 'avant-propos',
         component: AvantProposComponent,
       },
@@ -25,11 +37,12 @@ export const routes: Routes = [
       {
         path: 'services',
         component: ServicesComponent,
-      },
+      }, */
+      { path: '**', component: HomeComponent },
 ];
 
 export const routerOptions: ExtraOptions = {
-    useHash: false,
+    useHash: true,
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled',
     // ...any other options you'd like to use

@@ -1,0 +1,24 @@
+DirectoryIndex home.html
+
+# Use mod_rewrite to handle routing for Angular app
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests to home.html if the file or directory does not exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ /home.html [L]
+
+    # Ensure that the hash is preserved in the URL
+    RewriteCond %{REQUEST_URI} !^/home.html$
+    RewriteCond %{REQUEST_URI} ^/([^.]+)$
+    RewriteRule ^(.*)$ /home.html [L,QSA]
+
+    # Optional: Enable compression
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+    </IfModule>
+</IfModule>
+
+# Redirect all 404 errors to home.html
+ErrorDocument 404 /home.html

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://amaga-cyber.fr/sitemap.xml

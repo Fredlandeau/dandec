@@ -347,10 +347,10 @@
       [opened]="(isHandset$ | async) === false"> -->
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/accueil" routerLink="/accueil" >Accueil</a>
-      <a mat-list-item href="/avant-propos" routerLink="avant-propos">Avant propos</a>
-      <a mat-list-item href="/services" routerLink="/services">Services</a>
-      <a mat-list-item href="/contact" routerLink="/contact">Contact</a>
+      <a mat-list-item [routerLink]="['/amaga-cyber']" fragment="top" [class.active-list-item]="(activeFragment | async) === 'top'" >Accueil</a>
+      <a mat-list-item [routerLink]="['/amaga-cyber']" fragment="avantpropos" [class.active-list-item]="(activeFragment | async) === 'avantpropos'">Avant propos</a>
+      <a mat-list-item [routerLink]="['/amaga-cyber']" fragment="services" [class.active-list-item]="(activeFragment | async) === 'services'">Services</a>
+      <a mat-list-item [routerLink]="['/amaga-cyber']" fragment="valeurs" [class.active-list-item]="(activeFragment | async) === 'valeurs'">Valeurs</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -363,23 +363,26 @@
           (click)="drawer.toggle()">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
+        <div style="margin-left: -48px">AMAGA CYBER</div>
+        <div fxFlex></div>
       }
-      <div>AMAGA CYBER</div>
-      <div fxFlex></div>
+      
       @if (isNotHandset$ | async) {
+        <div>AMAGA CYBER</div>
+      <div fxFlex></div>
         <div>
-          <mat-nav-list class="list-horizontal" color="primary">
-            <a mat-list-item href="/accueil" routerLink="/accueil" style=" color: white ! important;" routerLinkActive="active-list-item">Accueil</a>
-            <a mat-list-item href="/avant-propos"  routerLink="/avant-propos" routerLinkActive="active-list-item">À propos</a>
-            <a mat-list-item href="/services" routerLink="/services" routerLinkActive="active-list-item">Services</a>
-            <a mat-list-item href="/contact" routerLink="/contact" routerLinkActive="active-list-item">Contact</a>
+          <mat-nav-list class="list-horizontal">
+            <a mat-list-item  [routerLink]="['/amaga-cyber']" fragment="top" [class.active-list-item]="(activeFragment | async) === 'top'">Accueil</a>
+            <a mat-list-item  [routerLink]="['/amaga-cyber']" fragment="avantpropos" [class.active-list-item]="(activeFragment | async) === 'avantpropos'" >À propos</a>
+            <a mat-list-item  [routerLink]="['/amaga-cyber']" fragment="services" [class.active-list-item]="(activeFragment | async) === 'services'" >Services</a>
+            <a mat-list-item  [routerLink]="['/amaga-cyber']" fragment="valeurs" [class.active-list-item]="(activeFragment | async) === 'valeurs'" >Valeurs</a>
           </mat-nav-list>
         </div>
       }
       
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+   <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

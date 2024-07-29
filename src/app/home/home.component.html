@@ -1,53 +1,71 @@
-<div class="temp">
+<div [ngClass]="{'large': this.isNotHandset$ | async, 'mini': this.isHandset$ | async}">
 
-  <div style="position: fixed; font-size: x-large; height: 100vh; width:20vw; background-color: #fbf4ef; z-index: 100">
+  <div class="temp">
+
+    <div class="fixed-column">
+
+      <div style="box-sizing: border-box; height:100%; padding: 2%; border: 10px solid #fcf9f9">
+        <div class="portrait">
+        </div>
+        <div>
+          <h2 class="text-center" style="font-size: x-large;">AMAGA CYBER</h2>
+
+          <h2 class="text-center" style="font-size: large;">MATTHIEU DANDEC</h2>
+          <h4 class="text-center" style="font-size: large;">FREELANCE<br>CHEF DE PROJET EN CYBERSÉCURITÉ </h4>
+         <!--  <h4 class="text-center" style="font-size: large;">CHEF DE PROJET EN CYBERSÉCURITÉ</h4> -->
 
 
-    <div
-      style="margin-left:auto; margin-right: auto; border-radius: 50%; width: 350px; height: 350px; background:url(../../assets/dandec-portrait.png) no-repeat -10px 0px;">
+
+          <div class="coord" style="margin-top: 2rem;">
+            <!-- <mat-icon>call</mat-icon> -->
+            <div class="shake">
+              <img src="../../assets/icons/tel.png" width="30px" height="30px" alt="Téléphone">
+            </div>
+            <a href="tel:+33663515808">06.63.51.58.08</a>
+
+          </div>
+          <div class="coord">
+            <!-- <mat-icon>mail</mat-icon> -->
+            <div class="shake">
+              <img src="../../assets/icons/mail.png" width="30px" height="30px" alt="Email">
+            </div>
+            <a href="mailto:mdandec@pm.me">mdandec{{"&#64;"}}pm.me</a>
+          </div>
+          <div class="coord">
+            <div class="shake">
+              <img src="../../assets/icons/linkedin.png" width="30px" height="30px" alt="LinkedIn">
+            </div>
+            <!--  <mat-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z" />
+              </svg>
+            </mat-icon> -->
+            <a href="https://www.linkedin.com/in/mdandec/">Linkedin</a>
+          </div>
+          <div class="coord">
+            <!-- <mat-icon>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z" />
+              </svg>
+            </mat-icon> -->
+            <div class="shake">
+              <img src="../../assets/icons/reco.png" width="30px" height="30px" alt="LinkedIn">
+            </div>
+            <a href="https://www.linkedin.com/in/mdandec/details/recommendations/?_l=fr_FR">Recommandations</a>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
-    <div>
-      <h2 class="text-center" style="font-size: 1.7em;">AMAGA CYBER</h2>
-
-      <h2 class="text-center" style="font-size: x-large;">MATTHIEU DANDEC</h2>
-      <h4 class="text-center" style="font-size: x-large;">CHEF DE PROJET EN CYBERSÉCURITÉ</h4>
-
-
-
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: left;">
-        <mat-icon>call</mat-icon>06.63.51.58.08
-      </div>
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: left;">
-        <mat-icon>mail</mat-icon><a href="mailto:mdandec@pm.me">mdandec{{"&#64;"}}pm.me</a>
-      </div>
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: left;">
-        <mat-icon>
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-            <path fill="currentColor"
-              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z" />
-          </svg>
-        </mat-icon>
-        <a href="https://www.linkedin.com/in/mdandec/">Linkedin</a>
-      </div>
-      <div style="display: flex; flex-direction: row; align-items: center; justify-content: left;">
-        <mat-icon>
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-            <path fill="currentColor"
-              d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z" />
-          </svg>
-        </mat-icon>
-        <a href="https://www.linkedin.com/in/mdandec/details/recommendations/?_l=fr_FR">Recommandations</a>
-      </div>
+    <div class="scrollable-column">
+      <app-avant-propos #top id="top" [isHandset$]="isHandset$" [isNotHandset$]="isNotHandset$"></app-avant-propos>
+      <app-services #services id="services" [@fadeInOut]="isVisible ? 'visible' : 'hidden'"></app-services>
+      <app-contact #valeurs id="valeurs" [@fadeInOut]="isVisible ? 'visible' : 'hidden'"></app-contact>
+      <app-footer #footer id="footer"></app-footer>
     </div>
-
-
-
-  </div>
-  <div style="position: relative; flex-grow: 1;">
-    <app-avant-propos style="width: 100%"></app-avant-propos>
-    <div style="height: 2px; border-top:1px solid #e3b18d"></div>
-    <app-services></app-services>
-    <app-contact></app-contact>
-    <app-footer></app-footer>
   </div>
 </div>

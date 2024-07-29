@@ -1,3 +1,7 @@
+
+.margin-top-2 {
+  margin-top: 2%;
+}
 .three-column-layout {
     display: grid;
     // grid-template-columns: repeat(3, 1fr);
@@ -6,11 +10,20 @@
     // grid-auto-rows: minmax(100px, auto);
 }
 
-.two-column-layout {
+.two-column-layout-left {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 3fr 1fr;
     grid-gap: 2%;
     grid-auto-rows: minmax(100px, auto);
+}
+
+.two-column-layout-right {
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2%;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .title {
@@ -23,6 +36,62 @@
 .liste {
     list-style: none;
 }
+
+.fond-logo {
+  width:  100%;
+  height: 300px;
+  background-image: url('../../assets/amaga/fond-amaga-logo2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.text-logo {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.fond-lignes {
+  width:  100%;
+  height: 100%;
+  background-image: url('../../assets/amaga/fond-amaga-logo2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 20%;
+ /*  mask: radial-gradient(circle, #0000 50%, rgba(0, 0, 0, 0.9) 70%);
+  backdrop-filter:blur(10px); */
+  /* box-shadow: 0 0 10px 8px #f8f8f78e inset;
+  box-shadow: 0 0 8px 8px #f8f8f78e; */
+}
+
+.block-blur-nothandset {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  box-shadow: inset -10px -10px 10px 20px white;
+}
+
+.block-blur-handset {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  box-shadow: inset -10px -10px 10px 20px #fafafa;
+}
+
+/* .fond-lignes::before {
+  content:'';
+  width:  100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(5px);
+  position: absolute;
+} */
 
 .polygon-text-container {
     position: relative;
@@ -59,3 +128,86 @@
   .polygon:nth-child(5) {
     transform: translate(-50%, -50%) rotate(40deg);
   }
+
+  mat-card {
+    background-color: #f7f6f3;;
+  }
+
+  .logo {
+   
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background-color: #f7f6f3;
+      z-index: 100;
+
+  }
+
+  .lines {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.lines::before, .lines::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #e0e0e0;
+    transform-origin: top left;
+}
+
+.lines::before {
+    transform: rotate(30deg);
+}
+
+.lines::after {
+    transform: rotate(-45deg);
+}
+
+.line1, .line2, .line3, .line4, .line5 {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    transform-origin: top left;
+}
+
+.line1 {
+    transform: rotate(10deg);
+}
+
+.line2 {
+    transform: rotate(20deg);
+}
+
+.line3 {
+    transform: rotate(40deg);
+}
+
+.line4 {
+    transform: rotate(50deg);
+}
+
+.line5 {
+    transform: rotate(60deg);
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    color: #444444;
+}
+
+.div-scroll {
+  
+  transition: opacity 0.5s ease-in-out;
+}

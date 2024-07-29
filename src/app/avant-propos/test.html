@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaga Cyber</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .text h1 {
+            font-size: 24px;
+            color: #444444;
+            margin: 0;
+        }
+
+        .text h2 {
+            font-size: 18px;
+            color: #666666;
+            margin: 5px 0 0;
+        }
+
+        .text p {
+            font-size: 14px;
+            color: #888888;
+            margin: 5px 0 0;
+        }
+
+        .lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #d0cfcf;
+        }
+
+        .line1 { top: -20%; left: 10%; transform: rotate(15deg); }
+        .line2 { top: -20%; left: 20%; transform: rotate(-10deg); }
+        .line3 { top: -20%; left: 30%; transform: rotate(20deg); }
+        .line4 { top: -20%; left: 40%; transform: rotate(-5deg); }
+        .line5 { top: -20%; left: 50%; transform: rotate(25deg); }
+        .line6 { top: -20%; left: 60%; transform: rotate(-15deg); }
+        .line7 { top: -20%; left: 70%; transform: rotate(30deg); }
+        .line8 { top: -20%; left: 80%; transform: rotate(-20deg); }
+
+        .trapezoid {
+    left: 50px;
+    top: 50px;
+    position: absolute;
+    height: 20%;
+    width: 30%;
+    background-color: transparent;
+    transform: rotate(-220deg);
+}
+
+.trapezoid:before {
+    content: '';
+    width: 57%;
+    height: 100%;
+    left: -4%;
+    position: absolute;
+    border-color: rgb(184, 164, 164);
+    border-style: solid;
+    border-width: 2px 0px 2px 2px;
+    -webkit-transform: skewX(-10deg);
+    transform: skewX(-20deg);
+}
+
+.trapezoid:after {
+    content: '';
+    width: 70%;
+    height: 100%;
+    right: -4%;
+    position: absolute;
+    border-color: rgb(184, 164, 164);
+    border-style: solid;
+    border-width: 2px 2px 2px 0px;
+    -webkit-transform: skewX(30deg);
+    transform: skewX(20deg);
+}
+
+.trapezoid2 {
+    left: 50px;
+    top: 50px;
+    position: absolute;
+    height: 100px;
+    width: 500px;
+    background-color: transparent;
+    transform: rotate(-40deg) translateX(50px) translateY(-50px) skew(150deg, -150deg);
+}
+
+.trapezoid2:before {
+    content: '';
+    width: 57%;
+    height: 100%;
+    left: -4%;
+    position: absolute;
+    border-color: rgb(184, 164, 164);
+    border-style: solid;
+    border-width: 2px 0px 2px 2px;
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+.trapezoid2:after {
+    content: '';
+    width: 59%;
+    height: 100%;
+    right: -4%;
+    position: absolute;
+    border-color: rgb(184, 164, 164);
+    border-style: solid;
+    border-width: 2px 2px 2px 0px;
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+}
+    </style>
+</head>
+<body>
+    <div class="lines">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+        <div class="line line5"></div>
+        <div class="line line6"></div>
+        <div class="line line7"></div>
+        <div class="line line8"></div>
+
+        <div class="trapezoid"></div>
+        <div class="trapezoid2"></div>
+    </div>
+    <div class="container">
+        <div class="text">
+            <h1>AMAGA CYBER</h1>
+            <h2>MATTHIEU DANDEC</h2>
+            <p>CHEF DE PROJET EN CYBERSÉCURITÉ</p>
+        </div>
+    </div>
+</body>
+</html>

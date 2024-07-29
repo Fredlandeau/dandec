@@ -27,5 +27,14 @@
 
    .active-list-item {
     color: white !important;
-    background-color: aqua !important;
+    background-color: white !important;
    }
+
+   .mdc-list-item__primary-text {
+    color: rgb(236, 6, 6) !important;
+    background-color: white !important;
+   }
+
+   a.mat-list-item.active { color: #e21212 !important; }
+
+  
